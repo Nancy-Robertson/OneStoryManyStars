@@ -180,6 +180,9 @@
 
     document.querySelector(".btn-book-prev").addEventListener("click",()=>{t.flipPrev()})
     document.querySelector(".btn-book-next").addEventListener("click",()=>{t.flipNext()})
+    document.querySelector(".page-total").innerText=t.getPageCount()
+    t.on("flip",e=>{document.querySelector(".page-count").innerHTML=e.data+1})
+    t.on("flip",e=>{document.querySelector(".page-current").innerText=e.data+1})
 
  	console.log("Nancy");
  </script>
