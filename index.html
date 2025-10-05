@@ -187,8 +187,6 @@
     console.log("page-total text:")
     console.log(document.querySelector(".b-page-total").innerText)
     document.querySelector(".b-page-total").innerHTML=book.getPageCount()
-    // t.on("flip",e=>{document.querySelector(".page-count").innerHTML=e.data+1})
-    // t.on("flip",e=>{document.querySelector(".page-current").innerText=e.data+1})
     book.on('flip', (e) => {
         console.log("Current page: " + e.data);
         document.querySelector(".b-page-count").innerHTML=e.data+1
