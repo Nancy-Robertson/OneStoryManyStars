@@ -146,7 +146,7 @@
     <div class="container">
         <div class="text-center mt-3 mb-2">
             <button type="button" class="btn btn-info btn-sm btn-book-prev">Previous page</button>
-            [<span class="page-count">1</span> of <span class="page-total">-</span>]
+            [<span class="b-page-count">1</span> of <span class="b-page-total">-</span>]
             <button type="button" class="btn btn-info btn-sm btn-book-next">Next page</button>
         </div>
     </div>
@@ -183,12 +183,17 @@
     console.log("page count:");
     console.log(book.getPageCount());
     console.log("page-total html:")
-    console.log(document.querySelector(".page-total").innerHTML)
+    console.log(document.querySelector(".b-page-total").innerHTML)
     console.log("page-total text:")
-    console.log(document.querySelector(".page-total").innerText)
-    document.querySelector(".page-total").innerHTML=book.getPageCount()
+    console.log(document.querySelector(".b-page-total").innerText)
+    document.querySelector(".b-page-total").innerHTML=book.getPageCount()
     // t.on("flip",e=>{document.querySelector(".page-count").innerHTML=e.data+1})
     // t.on("flip",e=>{document.querySelector(".page-current").innerText=e.data+1})
+    book.on('flip', (e) => {
+        console.log("Current page: " + e.data);
+        document.querySelector(".b-page-count").innerHTML=e.data+1
+        document.querySelector(".b-page-total").innerHTML=book.getPageCount()
+    });
 
  	console.log("Nancy");
  </script>
