@@ -178,6 +178,9 @@
     t=new St.PageFlip(document.getElementById("bookParent"),{width:800,height:600,size:"stretch",usePortrait:"false",minWidth:315,maxWidth:1e3,minHeight:400,maxHeight:1533});
     t.loadFromImages(["story/images/science-facts.png","story/images/charley.png","story/images/our-team.png","story/images/space-weather.png","images/canvas/0.jpg","images/canvas/1.jpg","images/canvas/1-2.jpg","images/canvas/1-2_.jpg","images/canvas/2.jpg","images/canvas/3.jpg","images/canvas/3-4.jpg","images/canvas/3-4_.jpg","images/canvas/4.jpg","images/canvas/5.jpg","images/canvas/6.jpg","images/canvas/7.jpg","images/canvas/8.jpg","images/canvas/9.jpg"]);
 
+    document.querySelector(".btn-book-prev").addEventListener("click",()=>{t.flipPrev()})
+    document.querySelector(".btn-book-next").addEventListener("click",()=>{t.flipNext()})
+
  	console.log("Nancy");
  </script>
 
